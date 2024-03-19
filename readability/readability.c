@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
@@ -22,7 +22,8 @@ int main(void)
     // debug printf("Sentences:%i\n", sentences);
 
     // Compute the Coleman-Liau index
-    float index = (0.0588 * (((float)letters / (float)words)*100) - (0.296 * (((float)sentences / (float)words)*100)) - 15.8);
+    float index = (0.0588 * (((float) letters / (float) words) * 100) -
+                   (0.296 * (((float) sentences / (float) words) * 100)) - 15.8);
     // debug printf("%.2f\n", (float)index);
 
     // Print the grade level
@@ -30,7 +31,7 @@ int main(void)
     {
         printf("Before Grade 1\n");
     }
-    else if(index >10)
+    else if (index > 10)
     {
         printf("Grade 16+\n");
     }
@@ -38,10 +39,7 @@ int main(void)
     {
         printf("Grade %i\n", (int) round(index));
     }
-
 }
-
-
 
 int count_letters(string text)
 {
@@ -51,12 +49,11 @@ int count_letters(string text)
     {
         if (isalpha(text[i]))
         {
-            letters ++;
+            letters++;
         }
     }
     return letters;
 }
-
 
 int count_words(string text)
 {
@@ -70,29 +67,28 @@ int count_words(string text)
         }
         else if (isblank(text[i]))
         {
-            if (ispunct(text[i-1]))
+            if (ispunct(text[i - 1]))
             {
                 words = words + 0;
             }
             else
             {
-                words ++;
+                words++;
             }
-
         }
         else if (ispunct(text[i]))
         {
-            if (isalpha(text[i+1]))
+            if (isalpha(text[i + 1]))
             {
                 words = words + 0;
             }
-            else if (ispunct(text[i+1]))
+            else if (ispunct(text[i + 1]))
             {
                 words = words + 0;
             }
             else
             {
-                words ++;
+                words++;
             }
         }
     }
@@ -109,15 +105,15 @@ int count_sentences(string text)
         {
             if (text[i] == 33)
             {
-                sentences ++;
+                sentences++;
             }
             else if (text[i] == 46)
             {
-                sentences ++;
+                sentences++;
             }
             else if (text[i] == 63)
             {
-                sentences ++;
+                sentences++;
             }
             else
             {
