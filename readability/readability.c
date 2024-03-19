@@ -17,13 +17,13 @@ int main(void)
     int letters = count_letters(text);
     int words = count_words(text);
     int sentences = count_sentences(text);
-    printf("Letters:%i\n", letters);
-    printf("Words:%i\n", words);
-    printf("Sentences:%i\n", sentences);
+    // debug printf("Letters:%i\n", letters);
+    // debug printf("Words:%i\n", words);
+    // debug printf("Sentences:%i\n", sentences);
 
     // Compute the Coleman-Liau index
     float index = (0.0588 * (((float)letters / (float)words)*100) - (0.296 * (((float)sentences / (float)words)*100)) - 15.8);
-    printf("%.2f\n", (float)index);
+    // debug printf("%.2f\n", (float)index);
 
     // Print the grade level
     if (index < 1)
