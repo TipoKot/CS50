@@ -4,7 +4,8 @@
 int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
-    if (argc == 1)
+        // index 0 in argv is always the program name
+    if (argc == 2)
     {
 
     }
